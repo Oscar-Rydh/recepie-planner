@@ -3,7 +3,6 @@ import { FiPlus, FiRotateCcw, FiShoppingCart } from "react-icons/fi";
 import { Card } from "../components/Card";
 import { CircularButton } from "../components/CircularButton";
 import { FiList } from "react-icons/fi";
-import { HomePageRefresh } from "../components/HomePageRefresh";
 import { IconRenderer } from "../components/IconRenderer";
 import { NavBar } from "../components/NavBar";
 
@@ -15,7 +14,7 @@ const IndexPage = () => (
         <h1 className="text-2xl font-bold pt-4 pb-4"> Dagens recept </h1>
       </div>
       <div className="mx-auto">
-        <Card />
+        <Card id={"tmp"} />
       </div>
       <div className="mx-auto pt-8 flex-grow">
         <IconRenderer size={"3em"} Icon={FiRotateCcw} />
