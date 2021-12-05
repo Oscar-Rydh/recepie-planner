@@ -6,8 +6,8 @@ export interface SearchProps {
   onSubmit(): void;
 }
 export const Search = ({ onSubmit }: SearchProps) => {
-  const handleSubmit = (event: KeyboardEvent) => {
-    if (event.key === "Enter") {
+  const handleSubmit = (keyPressed: string) => {
+    if (keyPressed === "Enter") {
       onSubmit();
     }
   };
@@ -16,7 +16,7 @@ export const Search = ({ onSubmit }: SearchProps) => {
     <div className="w-full">
       <div className="relative">
         <input
-          onKeyDown={(e) => handleSubmit(e)}
+          onKeyDown={(e) => handleSubmit(e.key)}
           className="shadow border w-full rounded-full pl-4 pr-8 py-2"
           placeholder="Search"
         />
