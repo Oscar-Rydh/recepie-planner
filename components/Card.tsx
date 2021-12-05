@@ -2,7 +2,7 @@ import React from "react";
 import { FiClock } from "react-icons/fi";
 
 export const Card = () => (
-  <div className="border shadow-md h-64 max-w-md">
+  <div className="border shadow-md h-64 w-screen max-w-md">
     <div className="border h-5/6 flex items-center justify-center">
       <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" />
     </div>
