@@ -1,9 +1,11 @@
 import React from "react";
 import { FiClock, FiShoppingCart } from "react-icons/fi";
+import { CircularButton } from "../../components/CircularButton";
 import { Description } from "../../components/Description";
 import { ExtrasPicker } from "../../components/ExtrasPicker";
 import { IconRenderer } from "../../components/IconRenderer";
 import { NavBar } from "../../components/NavBar";
+import { PortionPicker } from "../../components/PortionPicker";
 import { Search } from "../../components/Search";
 import { TextIcon } from "../../components/TextIcon";
 
@@ -34,6 +36,15 @@ const Recepie = () => {
       <div className="px-4">
         <h3>Sås</h3>
         <ExtrasPicker />
+      </div>
+      <div className="my-4">
+        <PortionPicker />
+      </div>
+      <div>
+        <CircularButton
+          onClick={() => console.log("clicked")}
+          Icon={FiShoppingCart}
+        />
       </div>
     </div>
   );
