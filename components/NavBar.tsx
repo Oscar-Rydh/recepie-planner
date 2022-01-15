@@ -1,21 +1,42 @@
+import {
+  AppBar,
+  Box,
+  Button,
+  IconButton,
+  Toolbar,
+  Typography,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 import React from "react";
-import { FiList, FiMenu, FiShoppingCart } from "react-icons/fi";
-import { IconRenderer } from "./IconRenderer";
+import { FormatListBulleted, ShoppingCart } from "@mui/icons-material";
 
-export const NavBar = () => (
-  <div className="w-screen h-16 bg-gray-700">
-    <div className="flex justify-between">
-      <div className="p-5">
-        <IconRenderer size={"1.5em"} Icon={FiMenu} />
-      </div>
-      <div className="grid grid-cols-2 auto-cols-max pt-5 pr-4">
-        <span className="pr-4">
-          <IconRenderer size={"1.5em"} Icon={FiList} />
-        </span>
-        <span className="">
-          <IconRenderer size={"1.5em"} Icon={FiShoppingCart} />
-        </span>
-      </div>
-    </div>
-  </div>
-);
+export const NavBar = () => {
+  return (
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            News
+          </Typography>
+          <IconButton color="inherit">
+            <ShoppingCart />
+          </IconButton>
+          <IconButton color="inherit">
+            <FormatListBulleted />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+    </Box>
+  );
+};
+
+export default NavBar;

@@ -1,50 +1,33 @@
+import { Box, IconButton, Container, Typography, Stack } from "@mui/material";
 import React from "react";
-import { FiPlus, FiRotateCcw, FiShoppingCart } from "react-icons/fi";
-import { Card } from "../components/Card";
-import { CircularButton } from "../components/CircularButton";
-import { FiList } from "react-icons/fi";
-import { IconRenderer } from "../components/IconRenderer";
-import { NavBar } from "../components/NavBar";
+import { NavBar, NavigationButtons, RecepieCard } from "../components";
+import { Refresh } from "@mui/icons-material";
 
-const IndexPage = () => (
-  <div className="bg-gray-200 h-screen">
-    <NavBar />
-    <div className="flex flex-col">
-      <div className="mx-auto">
-        <h1 className="text-2xl font-bold pt-4 pb-4"> Dagens recept </h1>
-      </div>
-      <div className="mx-auto">
-        <Card id={"tmp"} />
-      </div>
-      <div className="mx-auto pt-8 flex-grow">
-        <IconRenderer size={"3em"} Icon={FiRotateCcw} />
-      </div>
-    </div>
-    <div className="absolute bottom-0 w-screen h-40">
-      <div className="flex justify-center">
-        <div>
-          <CircularButton
-            Icon={FiList}
-            count={99}
-            onClick={() => console.log("Got click")}
-          />
-        </div>
-        <div className="pl-8 pr-8">
-          <CircularButton
-            Icon={FiPlus}
-            onClick={() => console.log("Got click")}
-          />
-        </div>
-        <div>
-          <CircularButton
-            Icon={FiShoppingCart}
-            count={99}
-            onClick={() => console.log("Got click")}
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-);
+const Index2Page = () => {
+  return (
+    <Box>
+      <NavBar />
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+      >
+        <Box sx={{ textAlign: "center", mt: 1 }}>
+          <Typography variant="h3" gutterBottom>
+            Dagens recept
+          </Typography>
+        </Box>
+        <RecepieCard />
+        <IconButton size="large" color="inherit">
+          <Refresh fontSize="large" />
+        </IconButton>
+      </Box>
+      <NavigationButtons />
+    </Box>
+  );
+};
 
-export default IndexPage;
+export default Index2Page;
